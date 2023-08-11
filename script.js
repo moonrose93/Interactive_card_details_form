@@ -70,6 +70,16 @@ nameInput.addEventListener("keyup",()=>{
   }
 })
 
+nameInput.addEventListener("keyup",()=>{
+  if(nameInput.value ===""){
+    cardNameDesktop.innerText = "Jane Appleseed";
+    cardNameMobile.innerText = "Jane Appleseed";
+  }else{
+    cardNameDesktop.innerText = nameInput.value;
+    cardNameMobile.innerText = nameInput.value;
+  }
+})
+
 // Event listener to update card numbers
 cardInput.addEventListener("keyup", () => {
   if (cardInput.value === "") {
