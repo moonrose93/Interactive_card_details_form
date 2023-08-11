@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+  <img class="logo-mobile" src="/card-logo.svg" alt="logo">
+  <div class="card-front-mobile">
+    <img src="/bg-card-front.png" alt="front">
+    <div class="txt">
+    <p class="card-num-mobile" id="card-number-mobile">0000 0000 0000 0000</p>
+    <p class="card-name-mobile" id="card-name-mobile">Jane Appleseed</p>
+    </div>
+    <div class="together-mobile"><p class="exp"id="exp-month-mobile">00</p><p class="cross-mobile">/</p><p class="exp"id="exp-year-mobile">00</p></div>
+  </div>
+  <div class="card-back-mobile">
+    <img src="/bg-card-back.png" alt="back">
+    <p class="cvc-card-mobile" id="cvc-card-mobile">000</p>
+  </div>
+  <div class="container">
+    <div class="left">
+      <div class="card-front">
+        <img class="logo" src="/card-logo.svg" alt="logo">
+        <img src="/bg-card-front.png" alt="front">
+        <p class="card-num"  id="card-num" >0000 0000 0000 0000</p>
+        <p class="card-name" id="card-name">Jane Appleseed</p>
+        <div class="together"><p class="exp"id="exp-month">00</p><p class="cross-desktop">/</p><p class="exp"id="exp-year">00</p></div>
+      </div>
+      <div class="card-back">
+        <img src="/bg-card-back.png" alt="back">
+        <p class="cvc-card" id="cvc-card-desktop">000</p>
+      </div>
+    </div>
+    <div class="right">
+      <label  for="name">Cardholder Name</label><input class="name-input" id="name-input" type="text" placeholder="e.g. Jane Appleseed">
+      <label  class="number-label" for="number">Card Number</label><input class="card-number" id="card-input" type="text"placeholder="e.g. 1234 5678 9123 0000">
+      <p class="card-number-error" id="card-number-error">Wrong format, numbers only</p>
+      <div class="exp-date-month-cvc">
+        <label class="heading" for="exp-date">exp-date (MM/YY)</label>
+        <label class="cvc"   for="cvc">cvc</label>
+      </div>
+      <div class="inputs">
+        <input class="first" id="month-input" type="text"placeholder="MM">
+        <input class="second" id="year-input" type="text"placeholder="YY">
+        <input class="third" id="cvc-input" type="text"placeholder="e.g.123">
+      </div>
+      
+     <div class="blanks">
+      <p class="blank1" id="blank1">Can't be blank</p>
+      <p class="blank2" id="blank2">Can't be blank</p>
+      <p class="blank3" id="blank3">Can't be blank</p>
+     </div>
+      
+      <button class="btn" id="confirm-btn">Confirm</button>
+    </div>
+    <div class="popup" id="popup">
+      <img class="icon-complete"src="/icon-complete.svg" alt="icon-complete">
+      <p class="thank-you">Thank you!</p>
+      <p class="message">We've added your card details</p>
+      <button class="continue-btn" id="continue-btn">Continue</button>
+  </div>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
