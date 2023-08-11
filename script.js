@@ -72,12 +72,15 @@ cardInput.addEventListener("input", () => {
   }
 });
 
+const lettersOnly = document.getElementById("letters-only");
 //if name input value is not empty then the name input to turn blue else to be normal
 nameInput.addEventListener("keyup",()=>{
   if(!nameRegex.test(nameInput.value)){
     setOutlineColor(nameInput,"red");
+    lettersOnly.style.display = "block";
   }else{
     setOutlineColor(nameInput, "blue");
+    lettersOnly.style.display = "none";
   }
 })
 
