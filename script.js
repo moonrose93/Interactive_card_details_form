@@ -158,7 +158,7 @@ cvcInput.addEventListener("keyup", () => {
         confirmBtn.addEventListener("click", () => {
           // Check if all input fields are filled
           const allInputsFilled =
-            nameInput.value.trim() !=== "" &&
+            nameInput.value.trim() !== "" &&
             cardInput.value.trim() !== "" &&
             monthInput.value.trim() !== "" &&
             yearInput.value.trim() !== "" &&
