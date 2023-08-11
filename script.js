@@ -46,7 +46,7 @@ const numberRegex = /^\d*$/;/*In this code, I've attached an input event listene
 $: End of the string*/
 
 
-// Function to set outline color
+// Function to set outline color-we use it for every input = by calling this function inside the eventlistener and the input.
 function setOutlineColor(inputElement, color) {
   inputElement.style.outlineColor = color;
 }
@@ -57,7 +57,7 @@ cardInput.addEventListener("input", () => {
   if (!numberRegex.test(cardInput.value)) {
     setOutlineColor(cardInput, "red");   
   } else {
-    setOutlineColor(cardInput, ""); // Reset to default or remove outline
+    setOutlineColor(cardInput, "blue"); // Reset to default or remove outline
   }
 });
 
@@ -86,6 +86,7 @@ cardInput.addEventListener("keyup", () => {
     cardNumDesktop.innerText = "0000 0000 0000 0000";
     cardNumMobile.innerText = "0000 0000 0000 0000";
   } else {
+
     cardNumDesktop.innerText = cardInput.value;
     cardNumMobile.innerText = cardInput.value;
   }
@@ -111,22 +112,12 @@ monthInput.addEventListener("keyup",()=>{
     inputBlankMessage.style.display = "block";
 
   }else{
-    setOutlineColor(monthInput, "");
+    setOutlineColor(monthInput, "blue");
     inputBlankMessage.style.display = "none";
   }
 
 });
 
-yearInput.addEventListener("keyup", () => {
-  if(yearInput.value === ""){
-    cardExpYearDesktop.innerText = "00";
-    cardExpYearMobile.innerText = "00";
-  }else{
-    cardExpYearDesktop.innerText = yearInput.value;
-    cardExpYearMobile.innerText = yearInput.value;
-  }
-
-});
 
 const inputBlankMessage2 = document.getElementById("blank2");
 
@@ -135,31 +126,27 @@ yearInput.addEventListener("keyup", ()=>{
     setOutlineColor(yearInput, "red");
     inputBlankMessage2.style.display = "block";
   }else{
-    setOutlineColor(yearInput, "")
+    setOutlineColor(yearInput, "blue")
     inputBlankMessage2.style.display = "none";
   }
 })
 
+const inputBlankMessage3 = document.getElementById("blank3");
+
 cvcInput.addEventListener("keyup", () => {
   if(cvcInput.value === ""){
+    setOutlineColor(cvcInput, "red");
     cardCvcDesktop.innerHTML = "000";
     cardCvcMobile.innerHTML = "000";
+    inputBlankMessage3.style.display = "block";
   }else{
-    cardCvcDesktop.innerText = cvcInput.value;
+    setOutlineColor(cvcInput, "blue");
+     cardCvcDesktop.innerText = cvcInput.value;
      cardCvcMobile.innerText = cvcInput.value;
+     inputBlankMessage3.style.display = "none";
   }
 });
 
-const inputBlankMessage3 = document.getElementById("blank3");
-cvcInput.addEventListener("keyup",()=>{
-  if(cvcInput.value === ""){
-    setOutlineColor(cvcInput, "red");
-    inputBlankMessage3.style.display = "block";
-  }else{
-    setOutlineColor(cvcInput, "");
-    inputBlankMessage3.style.display = "none";
-  }
-})
 
 
     const confirmBtn = document.getElementById("confirm-btn");
@@ -171,7 +158,7 @@ cvcInput.addEventListener("keyup",()=>{
         confirmBtn.addEventListener("click", ()=> {
           // Check if all input fields are filled
           const allInputsFilled =
-            nameInput.value.trim() !== "" &&
+            nameInput.value.trim() === "" &&
             cardInput.value.trim() !== "" &&
             monthInput.value.trim() !== "" &&
             yearInput.value.trim() !== "" &&
