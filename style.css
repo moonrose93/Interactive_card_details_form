@@ -346,8 +346,9 @@ placeholder{
     .popup{
         display: none;
         width: 100%;
-        position: relative;
+        position: fixed;
         left:0px;
+        top:60px;
     }
     
     .thank-you{
