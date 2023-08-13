@@ -147,16 +147,24 @@ yearInput.addEventListener("keyup", ()=>{
   }
 })
 
+
+cvcInput.addEventListener("keyup", ()=>{
+  if(!cvcRegex.test(cvcInput.value)){
+    setOutlineColor(cvcInput, "red"); 
+  }else{
+    setOutlineColor(cvcInput, "blue");
+  }
+})
+
+
 const inputBlankMessage3 = document.getElementById("blank3");
 
 cvcInput.addEventListener("keyup", () => {
   if(cvcInput.value === ""){
-    setOutlineColor(cvcInput, "red");
     cardCvcDesktop.innerHTML = "000";
     cardCvcMobile.innerHTML = "000";
     inputBlankMessage3.style.display = "block";
   }else{
-    setOutlineColor(cvcInput, "blue");
      cardCvcDesktop.innerText = cvcInput.value;
      cardCvcMobile.innerText = cvcInput.value;
      inputBlankMessage3.style.display = "none";
@@ -191,6 +199,7 @@ cvcInput.addEventListener("keyup", () => {
         continueBtn.addEventListener("click", () => {
           // Hide the popup and show the container's right side
           popup.style.display = "none";
+          
           
         });
       
